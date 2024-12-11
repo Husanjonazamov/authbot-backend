@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ro'yhatdan o'tish va Kirish</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            background-color: #f8f9fa;
+        }
+        .container {
+            display: flex;
+            flex: 1;
+            flex-direction: row;
+        }
+        .left-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8f9fa;
+            border-right: 2px solid #ccc;
+        }
+        .button-container {
+            display: flex;
+            gap: 20px;
+        }
+        .left-panel a {
+            display: block;
+            width: 180px;
+            padding: 15px;
+            font-size: 18px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            border-radius: 25px;
+            background: #000;
+            color: #fff;
+            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2), -4px -4px 8px rgba(255, 255, 255, 0.2);
+            transition: all 0.3s;
+        }
+        .left-panel a:hover {
+            background: #333;
+            box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.4), inset -4px -4px 8px rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+        .right-panel {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .right-panel img {
+            max-width: 80%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .left-panel {
+                width: 100%;
+                border-right: none;
+                border-bottom: 2px solid #ccc;
+                padding: 20px;
+            }
+            .button-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .right-panel {
+                width: 100%;
+                padding: 20px;
+            }
+            .right-panel img {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <div class="button-container">
+                <a href="https://t.me/testuchforbot">Ro'yhatdan o'tish</a>
+                <a href="https://t.me/testuchforbot/login">Kirish</a>
+            </div>
+        </div>
+        <div class="right-panel">
+            <img src="https://images.unsplash.com/photo-1593642634367-d91a135587b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDF8fHJlZ2lzdGVyfGVufDB8fHx8MTY5Njg2OTI5Ng&ixlib=rb-1.2.1&q=80&w=800" alt="Registration Image">
+        </div>
+    </div>
+</body>
+</html>

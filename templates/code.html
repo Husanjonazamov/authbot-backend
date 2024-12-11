@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foydalanuvchi tasdiqlash</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        button:active {
+            background-color: #388e3c;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .success {
+            color: green;
+            font-size: 14px;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Foydalanuvchi tasdiqlash</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <input type="text" name="code" placeholder="Tasdiqlash kodini kiriting" required>
+                <input type="hidden" name="user_id" value="{{ user_id }}" />
+            </div>
+            <button type="submit">Tasdiqlash</button>
+        </form>
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% elif success %}
+            <p class="success">{{ success }}</p>
+        {% endif %}
+        
+    </div>
+
+</body>
+</html>

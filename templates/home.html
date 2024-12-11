@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">MyAuth</div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#logout" id="logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="welcome-section">
+            <h1>Welcome Back, <span id="username">User</span>!</h1>
+            <p>Thank you for joining us. Explore our services and stay connected!</p>
+            <a href="#services" class="btn">Explore Services</a>
+        </section>
+
+        <section id="services" class="services-section">
+            <h2>Our Services</h2>
+            <div class="services-container">
+                <div class="service-card">
+                    <h3>Web Development</h3>
+                    <p>We build scalable and user-friendly websites.</p>
+                </div>
+                <div class="service-card">
+                    <h3>App Development</h3>
+                    <p>Creating intuitive mobile applications for all platforms.</p>
+                </div>
+                <div class="service-card">
+                    <h3>SEO Optimization</h3>
+                    <p>Helping your website rank higher in search results.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 MyAuth. All rights reserved.</p>
+    </footer>
+
+    <script src="{% static "js/main.js" %}"></script>
+</body>
+</html>
